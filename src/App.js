@@ -1,23 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header/Header'
+import Footer from './components/Footer/Footer'
+import Colaborador from './components/Colaborador/Colaborador';
+import { useState } from 'react';
 
 function App() {
+  const [buscastr, setBuscastr] = useState(""); // uso hook: useState, variable buscastr, se inicializa con funcion setBuscastr.
+  console.log(buscastr);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header setBuscastr={setBuscastr}/> 
+      <Colaborador buscastr={buscastr} />
+      <Footer />
     </div>
   );
 }
